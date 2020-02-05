@@ -1,0 +1,40 @@
+table
+        tr
+            td
+                p Switch Test
+                p Enter two numbers, select an operation and click 'Calculate;.
+                form(method="POST", action="/test/math")
+                    table(style='border: 2px solid black')
+                        tr
+                            td First Number
+                            td
+                                input(type="number", name="number1" value=number1)
+                        tr
+                            td
+                                Math Operator
+                            td
+                                select(name="operator")
+                                    option(value="+" selected=(operator === "+")) Add
+                                    option(value="-" selected=(operator === "-")) Subtract
+                                    option(value="/" selected=(operator === "/")) Divide
+                                    option(value="*" selected=(operator === "*")) Multiply
+                                    option(value="%" selected=(operator === "%")) Remainder
+                                    option(value="!" selected=(operator === "!")) Factorial
+                                    option(value="f" selected=(operator === "f")) Fibonacci
+                                    option(value="^" selected=(operator === "^")) Power
+                        tr
+                            td Second Number
+                            td
+                                input(type='number' name="number2" value=number2)
+                        tr
+                            td
+                                input(type="submit"  value="Calculate")
+                                br
+                                input(type="radio" name="output" value="d" checked=(output === "d"))
+                                | 10
+                                input(type="radio" name="output" value="x" checked=(output === "x"))
+                                | 16
+                                input(type="radio" name="output" value="b" checked=(output === "b"))
+                                | 01
+                            td
+                                p= mathResult
